@@ -1,0 +1,15 @@
+inp=input("enter a file")
+counts=dict()
+o=open(inp)
+for i in o:
+    x=i.split()
+    for j in x:
+        counts[j]=counts.get(j,0)+1
+print(counts)
+bigcount=None
+bigword=None
+for word,count in counts.items():
+    if bigcount is None or count>bigcount:
+        bigword=word
+        bigcount=count
+print(bigword,bigcount)
